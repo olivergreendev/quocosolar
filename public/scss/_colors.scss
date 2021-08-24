@@ -1,0 +1,91 @@
+// main titles, text, social icons
+$primary_dark: #393939;
+$primary_light: #F7F7F7;
+
+// labels
+$label_blue: #2575Fc;
+
+// background
+$dark_bg: #001F3A;
+
+// QUOCO SOLAR
+$primary_blue_dark: #0094CC;
+$primary_blue_light: #00C6D5;
+$gradient_background: linear-gradient(to right, $primary_blue_dark, $primary_blue_light);
+$gray-text-dark: #627597;
+$gray-text-light: #8193b2;
+$blue-text-dark: #111852;
+$footer-link: #586069;
+$pink-gradient-text: #cb4ca7;
+$blue-gradient-text: #3382f6;
+$text-gradient-pink-blue: linear-gradient(70deg, $pink-gradient-text, $blue-gradient-text);
+$large-heading-gray: #24292e;
+$orange-gradient-text: #d76964;
+$yellow-gradient-text: #ffd57d;
+$text-gradient-orange-yellow: linear-gradient(70deg, $orange-gradient-text, $yellow-gradient-text);
+$green-gradient-text: #9DF4D2;
+$green-gradient-text-blue: #6FBAF6;
+$text-gradient-green-blue: linear-gradient(70deg, $green-gradient-text, $green-gradient-text-blue);
+$amber-gradient-text: #f4c768;
+$light-purple-gradient-text: #a252ec;
+$text-gradient-amber-light-purple: linear-gradient(70deg, $amber-gradient-text, $light-purple-gradient-text);
+$information-card-blue: #4452f6;
+$wf-blue: #4353ff;
+
+.gray-text-dark {
+    color: $gray-text-dark;
+}
+
+.gray-text-light {
+    color: $gray-text-light;
+}
+
+.blue-text-dark {
+    color: $blue-text-dark;
+}
+
+.footer-link-gray {
+    color: $footer-link;
+}
+
+.text-gradient-blue {
+    -webkit-text-fill-color: transparent;
+    background: $gradient_background;
+    background-clip: text;
+}
+
+.text-gradient-pink-blue {
+    -webkit-text-fill-color: transparent;
+    background: $text-gradient-pink-blue;
+    background-clip: text;
+}
+
+.text-gradient-orange-yellow {
+    -webkit-text-fill-color: transparent;
+    background: $text-gradient-orange-yellow;
+    background-clip: text;
+}
+
+.text-gradient-green-blue {
+    -webkit-text-fill-color: transparent;
+    background: $text-gradient-green-blue;
+    background-clip: text;
+}
+
+.text-gradient-amber-light-purple {
+    -webkit-text-fill-color: transparent;
+    background: $text-gradient-amber-light-purple;
+    background-clip: text;
+}
+
+.large-heading-gray {
+    color: $large-heading-gray;
+}
+
+.information-card-blue {
+    color: $information-card-blue;
+}
+
+.wf-blue {
+    color: $wf-blue;
+}

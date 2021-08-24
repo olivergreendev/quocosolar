@@ -1,0 +1,24 @@
+// Common imports
+@import './responsive_mixins';
+@import './globals';
+@import './colors';
+@import './fonts';
+@import './typography';
+@import './header';
+@import './navbar';
+@import './hero';
+@import './media_queries';
+@import './packages';
+@import './footer';
+@import './alternating_grid';
+@import './custom';
+@import './information-resource';
+@import './book';
+@import './testing';
+@import './admin';
+
+:root {
+    --heading-font-family: "Poppins", sans-serif;
+    --regular-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    --gradient-background: linear-gradient(to right, $primary_blue_dark, $primary_blue_light);
+}

@@ -1,0 +1,173 @@
+.packages {
+    margin: auto;
+    text-align: center;
+}
+
+.package-comparison {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    // padding-top: 50px;
+    padding: 50px 0;
+    flex-wrap: wrap;
+}
+
+.package-column {
+    box-shadow: 0 7px 30px rgba(52,31,97,0.0);
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 2rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 450px;
+    border-radius: 18px;
+    margin: 1rem;
+    background: #fff;
+    transition: 0.2s ease-out;
+    z-index: 2;
+
+    &:hover {
+        box-shadow: 0 7px 30px rgba(52,31,97,0.1);
+    }
+}
+
+.package-column.popular {
+    background-color: #641BFF;
+    margin-top: -1.5rem;
+    padding-top: 5rem;
+    margin-bottom: -1.5rem;
+    padding-bottom: 5.5rem;
+    color: white;
+    position: relative;
+}
+
+.package-column.popular .divider {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.package-column.popular .most-popular {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #B98E15;
+    padding: .5rem;
+    background-color: #FEE35C;
+    border: 2px solid #B98E15;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.package-title {
+    font-family: var(--heading-font-family);
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #627597;
+}
+
+.package-price, .package-price-monthly {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--heading-font-family);
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: #627597;
+}
+
+.package-column.popular .package-price-from {
+    color: rgba(255,255,255,0.8);
+}
+
+.package-column.popular .package-price-equivalent {
+    color: rgba(255,255,255,0.8);
+}
+
+.pound-symbol {
+    font-size: 1.5rem;
+    margin-right: .25rem;
+}
+
+.per-month {
+    font-size: 1.5rem;
+    margin-left: .25rem;
+}
+
+.asterisk {
+    color: red;
+}
+
+.pound-symbol, .asterisk, .per-month {
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.package-price-from {
+    margin: 2rem 0 .5rem 0;
+}
+
+.package-price-from, .package-price-equivalent {
+    text-align: center;
+    color: $primary_blue_dark;
+    // font-weight: 600;
+}
+
+.divider {
+    height: 2px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+
+    img {
+        width: 1.1em;
+        height: 1.1em;
+        margin-right: .5rem;
+    }
+}
+
+.feature.inactive {
+    color: #999;
+}
+
+.package-book-btn {
+    border: none;
+    background: $gradient_background;
+    width: 100%;
+    padding: 1rem 1rem;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    transform: scale(1);
+    transition: 0.2s ease-out;
+    font-family: var(--heading-font-family);
+    text-decoration: none;
+
+    &:hover {
+        transform: scale(1.04);
+    }
+
+    // TRY GITHUB STYLE BUTTON FOR PACKAGES !!
+}
+
+.package-column.popular .package-book-btn {
+    background: white;
+    color: #641BFF;
+}
+
+.content-container {
+    flex: 1 100%;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}

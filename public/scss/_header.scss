@@ -1,0 +1,28 @@
+.header {
+    width: 100%;
+    // background: linear-gradient(rgba(4,9,30,0.5), rgba(4,9,30,0.5)), url('../img/hero_bg.jpg');
+    // background: radial-gradient(ellipse at bottom, #0D1E31, #111);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.header.large {
+    background: linear-gradient(rgba(4,9,30,0.5), rgba(4,9,30,0.5)), url('../img/hero_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.header.small {
+    background: radial-gradient(ellipse at bottom, #0D1E31 25%, #111) !important;
+}
+
+.large {
+    min-height: 100vh;
+}
+
+.small {
+    height: 15vh;
+    max-height: 926px;
+}

@@ -1,0 +1,43 @@
+.hero-container {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+
+    h1 {
+        font-size: 62px;
+    }
+
+    h2 {
+        font-weight: 400;
+    }
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 16px 34px;
+    margin-top: 40px;
+    font-size: 18px;
+    border-radius: 6px;
+    background: linear-gradient(to right, $primary_blue_dark, $primary_blue_light);
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.hero-curve {
+    bottom: -1px;
+    overflow: hidden;
+    z-index: 1;
+    width: 100% !important;
+    position: absolute;
+}

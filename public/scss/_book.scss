@@ -1,0 +1,108 @@
+.booking-form {
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 7px 30px rgba(52,31,97,0.06);
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        padding: 0;
+        display: block;
+        list-style-type: none;
+    }
+
+    li:not(:first-child) {
+        margin: 10px 0 0 0;
+    }
+
+    label {
+        margin: 0 0 10px 0;
+        padding: 0;
+        display: block;
+        font-size: 0.9rem;
+        // font-weight: bold;
+    }
+
+    .inline {
+        display: inline-block !important;
+    }
+
+    input[type=text],
+    input[type=date],
+    input[type=datetime],
+    input[type=number],
+    input[type=search],
+    input[type=time],
+    input[type=url],
+    input[type=email],
+    input[type=phone],
+    select {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        border: 1px solid #bebebe;
+        padding: 14px;
+        margin: 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        outline: none;
+        border-radius: 6px;
+        font-family:'Poppins', sans-serif;
+    }
+
+    input[type=text]:focus,
+    input[type=date]:focus,
+    input[type=datetime]:focus,
+    input[type=number]:focus,
+    input[type=search]:focus,
+    input[type=time]:focus,
+    input[type=url]:focus,
+    input[type=email]:focus,
+    input[type=phone]:focus,
+    select:focus {
+        -moz-box-shadow: 0 0 8px #88d5e9;
+        -webkit-box-shadow: 0 0 8px #88d5e9;
+        box-shadow: 0 0 8px #88d5e9;
+        border: 1px solid #88d5e9;
+    }
+
+    .field-divided {
+        width: 49%;
+    }
+
+    .field-long {
+        width: 100%;
+    }
+
+    .field-select {
+        width: 100%;
+    }
+}
+
+.booking-form input[type=submit], .booking-form input[type=button] {
+    background: $wf-blue;
+    padding: 12px 30px 12px 30px;
+    border: none;
+    color: #fff;
+    font-family:'Poppins', sans-serif;
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 15px 0 0;
+}
+
+.booking-form input[type=submit]:hover, .booking-form input[type=button]:hover {
+    background: $wf-blue;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.booking-form .required {
+    color: red;
+}

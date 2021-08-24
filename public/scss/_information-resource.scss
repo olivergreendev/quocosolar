@@ -1,0 +1,72 @@
+.information-cards {
+    max-width: 1200px;
+    margin: 16px;
+    display: grid;
+    grid-gap: 3rem;
+}
+
+.card {
+    background: #f6f8fa;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    text-align: left;
+    height: 450px;
+    min-height: 450px;
+    // min-width: 370px;
+    max-width: 320px;
+
+    &:hover {
+        background: #fff;
+        box-shadow: 0 7px 30px rgba(52,31,97,0.06);
+    }
+
+    .card-content {
+        padding: 30px;
+        height: 100%;
+        position: relative;
+    }
+
+    .card-image {
+        img {
+            width: 40%;
+            max-width: 105px;
+        }
+    }
+
+    .card-title {
+        margin: 0 auto 10px;
+
+        h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+    }
+
+    .card-body {
+
+
+    }
+
+    .card-button {
+        margin: 50px auto 10px;
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+
+        a {
+            text-decoration: none;
+            color: white;
+            background: $information-card-blue;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+        }
+    }
+}
+
+.information-card-category-header {
+
+    &:not(:first-child) {
+        margin: 100px 0 30px;
+    }
+}
