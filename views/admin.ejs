@@ -3,28 +3,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/qs-favicon-32x32.png">
-    <link rel="stylesheet" href="scss/style.css">
-    <title>Admin</title>
-</head>
-<body style="background-color: #f8f9fb;">
 
-    <!-- Create a test name variable -->
-    <% const firstName = 'Oliver' %>
-    <% const lastName = 'Green' %>
-    
-    <div class="container admin">
-        <h1 class="table-header text-left">
-            <span>Bookings</span>
-        </h1>
-        <p class="text-left">
-            Table of all bookings.
-        </p>
-        <table class="bookings-table" id="bookings-table">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/qs-favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Admin ∙ QuocoSolar</title>
+</head>
+<body style="background-color: #f8f9fb; font-family: 'Inter', sans-serif;">
+    <!-- Header Navbar -->
+    <header class="admin-header">
+        <a href="/admin"><img class="logo" src="img/logo_light.svg" alt="logo"></a>
+        <nav class="admin-nav">
+            <ul class="nav__links">
+                <li><a href="#" class="active">Bookings</a></li>
+                <li><a href="/admin/table2">Table 2</a></li>
+                <li><a href="/admin/table3">Table 3</a></li>
+            </ul>
+        </nav>
+        <a class="user-profile last-item" href="#"><button class="user-profile-btn"></button></a>
+    </header>
+    <!-- Table Header Control Panel -->
+    <div class="table-header-control-panel">
+        <!-- <a class="table-title" href="#">Bookings</a> -->
+        <div class="dropdown">
+            <button class="dropdownBtn">Bookings</button>
+            <div class="dropdown-content">
+                <a href="#">Bookings</a>
+                <a href="#">Users</a>
+            </div>
+        </div>
+        <span class="table-results-count"><%= data.length %> bookings found</span>
+        <div class="table-controls">
+            <ul class="controls">
+                <li><a href="#" class="edit" disabled>Edit</a></li>
+                <li><a href="#" class="delete">Delete</a></li>
+                <li><a href="#" class="add">Add Booking</a></li>
+                <li><a href="#" class="filter">Filter</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Table -->
+    <div class="table-container">
+        <table class="bookings-table" id="bookings-table" style="font-family: 'Inter', sans-serif;">
             <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th style="width: 21px;"></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Status</th>
@@ -34,17 +61,60 @@
                 <% for(var i=0; i<data.length; i++) {%>
                     <% var date = data[i].date.getDate()+'/'+(data[i].date.getMonth()+1)+'/'+data[i].date.getFullYear() %>
                     <tr>
-                        <td><%= data[i].first_name %></td>
-                        <td><%= data[i].last_name %></td>
+                        <td><input type="checkbox"></td>
+                        <td><%= data[i].first_name + ' ' + data[i].last_name %></td>
+                        <td><%= data[i].email %></td>
+                        <td><%= data[i].telephone %></td>
                         <td><%= date %></td>
                         <td><%= data[i].start_time %></td>
-                        <td><%= data[i].status %></td>
+                        <td>
+                            <span class="status <%= data[i].status %>">
+                                <%= data[i].status %>
+                            </span>
+                        </td>
                     </tr>
                 <%}%>
             </tbody>
         </table>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../api/routes/admin.js"></script>
+    <script src="/js/admin.js"></script>
 </body>
 </html>
+
+<!-- <div class="container admin">
+    <h1 class="table-header text-left">
+        <span>Bookings</span>
+    </h1>
+    <p class="text-left">
+        Table of all bookings.
+    </p>
+    <table class="bookings-table" id="bookings-table" style="font-family: 'Inter', sans-serif;">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i<data.length; i++) {%>
+                <% var date = data[i].date.getDate()+'/'+(data[i].date.getMonth()+1)+'/'+data[i].date.getFullYear() %>
+                <tr>
+                    <td><%= data[i].first_name %></td>
+                    <td><%= data[i].last_name %></td>
+                    <td><%= date %></td>
+                    <td><%= data[i].start_time %></td>
+                    <td>
+                        <span class="status">
+                            <%= data[i].status %>
+                        </span>
+                    </td>
+                </tr>
+            <%}%>
+        </tbody>
+    </table>
+</div> -->

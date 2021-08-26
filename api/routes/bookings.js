@@ -32,6 +32,8 @@ app.post('/submit-booking', (req, res, next) => {
             user_id: user_id,
             first_name: data.first_name,
             last_name: data.last_name,
+            email: data.email,
+            telephone: data.telephone,
             date: new_date,
             start_time: time,
             end_time: time,

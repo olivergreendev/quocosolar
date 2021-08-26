@@ -41,4 +41,22 @@ app.get('/', function (req, res) {
     // })
 });
 
+app.get('/table2', function (req, res) {
+    res.status(200).json({
+        message: "Table 2"
+    });
+});
+
+app.get('/table3', function (req, res) {
+    res.status(200).json({
+        message: "Table 3"
+    });
+});
+
+app.get('*', function (req, res) {
+    res.status(200).json({
+        message: "Undefined route."
+    });
+});
+
 module.exports = app;

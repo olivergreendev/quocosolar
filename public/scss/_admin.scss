@@ -1,36 +1,205 @@
-.container.admin {
+// .container.admin {
 
-    h1 {
-        margin: 0 0 20px;
-        font-size: 48px;
+//     h1 {
+//         margin: 0 0 20px;
+//         font-size: 48px;
+//     }
+
+//     p {
+//         font-weight: 300;
+//     }
+// }
+
+// .bookings-table {
+//     width: 100%;
+//     border-collapse: collapse;
+//     border-radius: 10px 10px 0 0;
+//     overflow: hidden;
+//     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+//     margin: 50px 0;
+//     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+//     thead {
+
+//         tr {
+//             background-color: #6146D9;
+//             color: white;
+//         }
+    
+//         th {
+//             font-weight: 600;
+//             border: none;
+//             padding: 12px;
+//             font-size: 1rem;
+//         }
+//     }
+
+//     tbody {
+
+//         tr {
+//             border-bottom: 1px solid #dddddd;
+//         }
+
+//         tr:last-of-type {
+//             border-bottom: 2px solid #6146D9;
+//         }
+
+//         tr:hover {
+//             background-color: rgba(97, 70, 217, 0.10);
+//         }
+
+//         td {
+//             font-weight: 500;
+//             font-size: 0.9rem;
+//         }
+//     }
+
+//     td, th {
+//         text-align: center;
+//         padding: 12px;
+//     }
+
+//     tr:nth-child(even) {
+//         background-color: rgba(97, 70, 217, 0.06);
+//     }
+// }
+
+// .status {
+//     padding: 5px 10px;
+//     border-radius: 4px;
+//     background-color: #FCD8D8;
+//     color: #C45D5D;
+// }
+
+.admin-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 20px;
+    // background-color: #201D41;
+    background: radial-gradient(ellipse at bottom, #0D1E31 25%, #111) !important;
+}
+
+.last-item {
+    margin-left: auto;
+}
+
+.admin-nav {
+    padding: 0px;
+}
+
+.logo {
+    cursor: pointer;
+    max-width: 200px;
+}
+
+.nav__links {
+    list-style: none;
+
+    li {
+        display: inline-block;
+        padding: 0px 10px;
+
+        a {
+            transition: all 0.15s ease 0s;
+            text-decoration: none;
+            color: #9898A3;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .active {
+            color: white;
+            font-weight: 500;
+        }
+    }
+}
+
+.user-profile-btn {
+    padding: 20px;
+    background-color: #9898A3;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.15s ease 0s;
+
+    &:hover {
+        background-color: white;
+    }
+}
+
+.table-header-control-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.table-title {
+    text-decoration: none;
+    color: #535353;
+    font-weight: 600;
+}
+
+.table-results-count {
+    color: #535353;
+}
+
+.controls {
+    list-style: none;
+
+    li {
+        display: inline-block;
+        padding: 0px 3px;
+
+        a {
+            transition: all 0.15s ease 0s;
+            text-decoration: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
     }
 
-    p {
-        font-weight: 300;
+    .edit {
+        background-color: #6BA2E9;
+        cursor: not-allowed;
+    }
+    .delete {
+        background-color: #E96B6B;
+    }
+    .add {
+        background-color: #31CA67;
+    }
+    .filter {
+        background-color: white;
+        border: 1px solid #CECECE;
+        color: black;
     }
 }
 
 .bookings-table {
     width: 100%;
     border-collapse: collapse;
-    border-radius: 10px 10px 0 0;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin: 50px 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     thead {
 
         tr {
-            background-color: #6146D9;
-            color: white;
+            // background-color: #6146D9;
+            color: #535353;
+            border-bottom: 1px solid #dddddd;
+            border-top: 1px solid #dddddd;
         }
     
         th {
             font-weight: 600;
             border: none;
-            padding: 12px;
-            font-size: 1rem;
+            // font-size: 1rem;
+            text-align: left;
         }
     }
 
@@ -41,25 +210,97 @@
         }
 
         tr:last-of-type {
-            border-bottom: 2px solid #6146D9;
+            // border-bottom: 2px solid #6146D9;
         }
 
         tr:hover {
-            background-color: rgba(97, 70, 217, 0.10);
+            // background-color: rgba(97, 70, 217, 0.10);
         }
 
         td {
-            font-weight: 500;
-            font-size: 0.9rem;
+            font-weight: 400;
+            color: #535353;
+
+            input[type="checkbox"] {
+                cursor: pointer;
+            }
         }
     }
 
     td, th {
-        text-align: center;
-        padding: 12px;
+        text-align: left;
+        padding: 15px;
+        font-size: 0.9rem;
     }
 
     tr:nth-child(even) {
-        background-color: rgba(97, 70, 217, 0.06);
+        // background-color: rgba(97, 70, 217, 0.06);
+    }
+}
+
+.status {
+    padding: 6px 10px;
+    border-radius: 6px;
+    
+    &.pending {
+        background-color: #FCD8D8;
+        color: #C45D5D;
+    }
+    &.incomplete {
+        background-color: #FCEFD8;
+        color: #C4975D;
+    }
+    &.complete {
+        background-color: #E2FCD8;
+        color: #7AA860;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    &:hover .dropdownBtn {
+        // background-color: #3e8e41;
+    }
+
+    &:hover .dropdown-content {
+        display: block;
+    }
+
+    button {
+        font-family: "Inter", sans-serif;
+    }
+}
+
+.dropdownBtn {
+    background-color: transparent;
+    color: #535353;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+
+    a {
+        color: #535353;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+
+        &:hover {
+            background-color: #f1f1f1;
+        }
     }
 }
