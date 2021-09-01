@@ -17,7 +17,6 @@ const bookingSchema = new Schema({
     email: {
         type: String,
         required: true
-        // unique: true
     },
     telephone: {
         type: String,
@@ -29,8 +28,7 @@ const bookingSchema = new Schema({
     },
     start_time: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     end_time: {
         type: String,

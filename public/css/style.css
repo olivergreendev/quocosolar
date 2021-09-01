@@ -184,6 +184,14 @@ p {
   letter-spacing: 0.3em !important;
 }
 
+.inline {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
 .gray-text-dark {
   color: #627597;
 }
@@ -1155,8 +1163,7 @@ a:hover .bump-link-symbol {
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
   text-align: left;
-  height: 450px;
-  min-height: 450px;
+  min-height: 230px;
   max-width: 320px;
 }
 
@@ -1208,7 +1215,7 @@ a:hover .bump-link-symbol {
 .booking-form {
   padding: 30px;
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid #ebebeb;
   -webkit-box-shadow: 0 7px 30px rgba(52, 31, 97, 0.06);
           box-shadow: 0 7px 30px rgba(52, 31, 97, 0.06);
 }
@@ -1232,7 +1239,7 @@ a:hover .bump-link-symbol {
   margin: 0 0 10px 0;
   padding: 0;
   display: block;
-  font-size: 0.9rem;
+  font-size: 15px;
 }
 
 .booking-form .inline {
@@ -1252,16 +1259,14 @@ a:hover .bump-link-symbol {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  border: 1px solid #bebebe;
+  background-color: #ebebeb;
+  border: none;
   padding: 14px;
   margin: 0;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   outline: none;
   border-radius: 6px;
   font-family: 'Poppins', sans-serif;
+  font-size: 15px;
 }
 
 .booking-form input[type=text]:focus,
@@ -1274,9 +1279,8 @@ a:hover .bump-link-symbol {
 .booking-form input[type=email]:focus,
 .booking-form input[type=phone]:focus,
 .booking-form select:focus {
-  -webkit-box-shadow: 0 0 8px #88d5e9;
-  box-shadow: 0 0 8px #88d5e9;
-  border: 1px solid #88d5e9;
+  -webkit-box-shadow: 0px 2px;
+  box-shadow: 0px 2px;
 }
 
 .booking-form .field-divided {
@@ -1292,25 +1296,48 @@ a:hover .bump-link-symbol {
 }
 
 .booking-form input[type=submit], .booking-form input[type=button] {
-  background: #4353ff;
+  background: black;
   padding: 12px 30px 12px 30px;
   border: none;
   color: #fff;
   font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   border-radius: 6px;
   margin: 15px 0 0;
+  width: 100%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
 .booking-form input[type=submit]:hover, .booking-form input[type=button]:hover {
-  background: #4353ff;
-  box-shadow: none;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
+  box-shadow: 0 7px 30px rgba(52, 31, 97, 0.2);
+  -moz-box-shadow: 0 7px 30px rgba(52, 31, 97, 0.2);
+  -webkit-box-shadow: 0 7px 30px rgba(52, 31, 97, 0.2);
 }
 
 .booking-form .required {
   color: red;
+}
+
+.error-prompt {
+  color: red;
+  margin: 5px 0 !important;
+  font-size: 14px !important;
+}
+
+.success-prompt {
+  background-color: #E2FCD8;
+  color: #7AA860;
+  padding: 15px !important;
+  border-radius: 8px;
+  margin: 5px 0 !important;
+  font-size: 16px !important;
 }
 
 .search-bar-label {
@@ -1530,6 +1557,7 @@ a:hover .bump-link-symbol {
 .status {
   padding: 6px 10px;
   border-radius: 6px;
+  font-weight: 600;
 }
 
 .status.pending {
@@ -1561,12 +1589,14 @@ a:hover .bump-link-symbol {
 }
 
 .dropdownBtn {
-  background-color: transparent;
+  background-color: #ebebeb;
   color: #535353;
   font-size: 16px;
   font-weight: 600;
   border: none;
   cursor: pointer;
+  padding: 12px 12px;
+  border-radius: 6px;
 }
 
 .dropdown-content {

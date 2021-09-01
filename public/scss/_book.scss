@@ -1,7 +1,7 @@
 .booking-form {
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 2px solid #ebebeb;
     box-shadow: 0 7px 30px rgba(52,31,97,0.06);
 
     ul {
@@ -23,7 +23,7 @@
         margin: 0 0 10px 0;
         padding: 0;
         display: block;
-        font-size: 0.9rem;
+        font-size: 15px;
         // font-weight: bold;
     }
 
@@ -44,16 +44,15 @@
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
-        border: 1px solid #bebebe;
+        // border: 1px solid #bebebe;
+        background-color: rgb(235, 235, 235);
+        border: none;
         padding: 14px;
         margin: 0;
-        -webkit-transition: all 0.3s ease-in-out;
-        -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
         outline: none;
         border-radius: 6px;
         font-family:'Poppins', sans-serif;
+        font-size: 15px;
     }
 
     input[type=text]:focus,
@@ -66,10 +65,16 @@
     input[type=email]:focus,
     input[type=phone]:focus,
     select:focus {
-        -moz-box-shadow: 0 0 8px #88d5e9;
-        -webkit-box-shadow: 0 0 8px #88d5e9;
-        box-shadow: 0 0 8px #88d5e9;
-        border: 1px solid #88d5e9;
+        // -moz-box-shadow: 0 0 8px #88d5e9;
+        // -webkit-box-shadow: 0 0 8px #88d5e9;
+        // box-shadow: 0 0 8px #88d5e9;
+        // -moz-box-shadow: 0 0 8px #dfdfdf;
+        // -webkit-box-shadow: 0 0 8px #dfdfdf;
+        // box-shadow: 0 0 8px #dfdfdf;
+        // border: 1px solid #88d5e9;
+        -moz-box-shadow: 0px 2px;
+        -webkit-box-shadow: 0px 2px;
+        box-shadow: 0px 2px;
     }
 
     .field-divided {
@@ -86,23 +91,53 @@
 }
 
 .booking-form input[type=submit], .booking-form input[type=button] {
-    background: $wf-blue;
+    background: black; // $wf-blue
     padding: 12px 30px 12px 30px;
     border: none;
     color: #fff;
     font-family:'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
     border-radius: 6px;
     margin: 15px 0 0;
+    width: 100%;
+    box-shadow: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
 
 .booking-form input[type=submit]:hover, .booking-form input[type=button]:hover {
-    background: $wf-blue;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
+    // background: $wf-blue;
+    // box-shadow: none;
+    // -moz-box-shadow: none;
+    // -webkit-box-shadow: none;
+    box-shadow: 0 7px 30px rgba(52, 31, 97, 0.20);
+    -moz-box-shadow: 0 7px 30px rgba(52, 31, 97, 0.20);
+    -webkit-box-shadow: 0 7px 30px rgba(52, 31, 97, 0.20);
 }
 
 .booking-form .required {
     color: red;
+}
+
+.error-prompt {
+    // background-color: #FCD8D8;
+    // color: #C45D5D;
+    color: red;
+    // padding: 10px !important;
+    // border-radius: 5px;
+    margin: 5px 0 !important;
+    font-size: 14px !important;
+}
+
+.success-prompt {
+    background-color: #E2FCD8;
+    color: #7AA860;
+    padding: 15px !important;
+    border-radius: 8px;
+    margin: 5px 0 !important;
+    font-size: 16px !important;
 }

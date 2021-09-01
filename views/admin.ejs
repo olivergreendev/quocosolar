@@ -17,8 +17,8 @@
         <nav class="admin-nav">
             <ul class="nav__links">
                 <li><a href="#" class="active">Bookings</a></li>
-                <li><a href="/admin/table2">Table 2</a></li>
-                <li><a href="/admin/table3">Table 3</a></li>
+                <!-- <li><a href="/admin/link2">Link</a></li>
+                <li><a href="/admin/link3">Link</a></li> -->
             </ul>
         </nav>
         <a class="user-profile last-item" href="#"><button class="user-profile-btn"></button></a>
@@ -55,6 +55,8 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Status</th>
+                    <th style="width: 100px;"></th>
+                    <!-- <th></th> -->
                 </tr>
             </thead>
             <tbody>
@@ -71,6 +73,12 @@
                             <span class="status <%= data[i].status %>">
                                 <%= data[i].status %>
                             </span>
+                        </td>
+                        <td>
+                            <div class="row-controls">
+                                <!-- <button>Edit</button> -->
+                                <button onclick="deleteRow(this,'<%= data[i].user_id %>', '<%= data[i].id %>')">Delete</button>
+                            </div>
                         </td>
                     </tr>
                 <%}%>

@@ -37,14 +37,4 @@ app.get('/information', function (req, res) {
     res.render('information');
 });
 
-app.get('/terms-of-service', function (req, res) {
-    // res.sendFile(root + '/public/html/terms-of-service.html');
-    res.render('terms-of-service');
-});
-
-app.get('/privacy-statement', function (req, res) {
-    // res.sendFile(root + '/public/html/privacy-statement.html');
-    res.render('privacy-statement');
-});
-
 module.exports = app;

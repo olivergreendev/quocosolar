@@ -50,40 +50,111 @@
                 </div>
                 <div class="section-card no-gap">
                     <div class="section-text">
-                        <!-- action="/submit-booking" -->
+
+                        <% if (success) { %>
+                            <div class="success-prompt">
+                                <strong>Successfully booked</strong>
+                            </div>
+                        <% } else { %>
+                            <% if (errors) { %>
+                                <% const first_name = errors.errors.find( ({ param }) => param === 'first_name' ); %>
+                                <% var first_name_error %>
+                                <% typeof first_name === 'undefined' ? first_name_error = '' : first_name_error = first_name.msg %>
+
+                                <% const last_name = errors.errors.find( ({ param }) => param === 'last_name' ); %>
+                                <% var last_name_error %>
+                                <% typeof last_name === 'undefined' ? console.log('Last name is OK') : last_name_error = last_name.msg %>
+
+                                <% const email = errors.errors.find( ({ param }) => param === 'email' ); %>
+                                <% var email_error %>
+                                <% typeof email === 'undefined' ? console.log('Email is OK') : email_error = email.msg %>
+
+                                <% const telephone = errors.errors.find( ({ param }) => param === 'telephone' ); %>
+                                <% var telephone_error %>
+                                <% typeof telephone === 'undefined' ? console.log('Telephone is OK') : telephone_error = telephone.msg %>
+
+                                <% const date = errors.errors.find( ({ param }) => param === 'date' ); %>
+                                <% var date_error %>
+                                <% typeof date === 'undefined' ? console.log('Date is OK') : date_error = date.msg %>
+
+                                <% const time = errors.errors.find( ({ param }) => param === 'time' ); %>
+                                <% var time_error %>
+                                <% typeof time === 'undefined' ? console.log('Time is OK') : time_error = time.msg %>
+
+                                <% const q1 = errors.errors.find( ({ param }) => param === 'q1' ); %>
+                                <% var q1_error %>
+                                <% typeof q1 === 'undefined' ? console.log('Question 1 is OK') : q1_error = q1.msg %>
+
+                                <% const q2 = errors.errors.find( ({ param }) => param === 'q2' ); %>
+                                <% var q2_error %>
+                                <% typeof q2 === 'undefined' ? console.log('Question 2 is OK') : q2_error = q2.msg %>
+                                
+
+                                <% for (var i=0; i<errors.errors.length; i++) { %>
+                                    <% var msg = errors.errors[i].msg %>
+                                <% } %>
+                            <% } %>
+                        <% } %>
+
+                        <!-- Form Start -->
                         <form class="booking-form" action="/book/submit-booking" method="POST">
                             <ul>
                                 <li>
                                     <label>Full Name<span class="required">*</span></label>
-                                    <input type="text" name="first_name" class="field-divided" placeholder="First name" required/>
+                                    <input type="text" name="first_name" class="field-divided" placeholder="First name"/>
                                     <input type="text" name="last_name" class="field-divided" placeholder="Last name"/>
+                                    <label for="first_name" class="field-divided inline error-prompt">
+                                        <%= first_name_error %>
+                                    </label>
+                                    <label for="last_name" class="field-divided inline error-prompt">
+                                        <%= last_name_error %>
+                                    </label>
                                 </li>
                                 <li>
                                     <label>Email<span class="required">*</span></label>
-                                    <input type="email" name="email" class="field-long"/>
+                                    <input type="text" name="email" class="field-long" placeholder="your@email.com"/>
+                                    <label for="email" class="error-prompt">
+                                        <%= email_error %>
+                                    </label>
+                                    <!-- <label for="email" class="error-prompt">This email address is already being used.</label> -->
                                 </li>
                                 <li>
                                     <label>Telephone<span class="required">*</span></label>
-                                    <input type="text" name="telephone" class="field-long"/>
+                                    <input type="text" name="telephone" class="field-long" placeholder="07479926447"/>
+                                    <label for="telephone" class="error-prompt">
+                                        <%= telephone_error %>
+                                    </label>
                                 </li>
                                 <li>
                                     <label>Date & Time<span class="required">*</span></label>
                                     <input type="date" id="" class="field-divided" name="date" value="" min="" max=""/>
                                     <input type="time" id="" class="field-divided" name="time" min="" max=""/>
+                                    <label for="date" class="field-divided inline error-prompt">
+                                        <%= date_error %>
+                                    </label>
+                                    <label for="time" class="field-divided inline error-prompt">
+                                        <%= time_error %>
+                                    </label>
                                 </li>
                                 <li>
-                                    <label>Ask some question here<span class="required">*</span></label>
-                                    <input type="radio" id="q1_yes" name="q1" value="Answer One"/>
+                                    <label>Question 1<span class="required">*</span></label>
+                                    <input type="radio" id="q1_yes" name="q1" value="q1_yes"/>
                                     <label for="q1_yes" style="display: inline-block;">Yes</label>
-                                    <input type="radio" id="q1_no" name="q1" value="Answer Two"/>
+                                    <input type="radio" id="q1_no" name="q1" value="q1_no" checked/>
                                     <label for="q1_no" style="display: inline-block;">No</label>
+                                    <label for="q1" class="block error-prompt">
+                                        <%= q1_error %>
+                                    </label>
                                 </li>
                                 <li>
-                                    <label>Ask another question here<span class="required">*</span></label>
-                                    <input type="radio" id="q2_yes" name="q2" value="Answer One"/>
+                                    <label>Question 2<span class="required">*</span></label>
+                                    <input type="radio" id="q2_yes" name="q2" value="q2_yes"/>
                                     <label for="q2_yes" style="display: inline-block;">Yes</label>
-                                    <input type="radio" id="q2_no" name="q2" value="Answer Two"/>
+                                    <input type="radio" id="q2_no" name="q2" value="q2_no" checked/>
                                     <label for="q2_no" style="display: inline-block;">No</label>
+                                    <label for="q2" class="block error-prompt">
+                                        <%= q2_error %>
+                                    </label>
                                 </li>
 
                                 <!-- <li>
@@ -96,10 +167,11 @@
                                 </li> -->
 
                                 <li>
-                                    <input type="submit" value="Submit" />
+                                    <input type="submit" value="Book" />
                                 </li>
                             </ul>
                         </form>
+                        <!-- Form End -->
                     </div>
                     <div class="section-image">
                         <img src="./img/svg/calendar.svg" />

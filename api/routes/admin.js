@@ -41,18 +41,35 @@ app.get('/', function (req, res) {
     // })
 });
 
-app.get('/table2', function (req, res) {
+app.get('/link2', function (req, res) {
     res.status(200).json({
-        message: "Table 2"
+        message: "Link2"
     });
 });
 
-app.get('/table3', function (req, res) {
+app.get('/link3', function (req, res) {
     res.status(200).json({
-        message: "Table 3"
+        message: "Link3"
     });
 });
 
+app.delete('/db/user/delete/:id', function (req, res) {
+    User.findByIdAndRemove({ _id: req.params.id }, function (err, user) {
+        if (err) { console.log(err); }
+        else { console.log('Removed User: ' + user); }
+    });
+});
+
+app.get('/db/booking/delete/:id', function (req, res) {
+    Booking.findByIdAndRemove({ _id: req.params.id }, function (err, booking) {
+        if (err) console.log(err);
+        else {
+            console.log('Removed Booking: ' + booking);
+        }
+    });
+});
+
+// Undefined routes
 app.get('*', function (req, res) {
     res.status(200).json({
         message: "Undefined route."

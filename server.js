@@ -4,6 +4,7 @@ const app = express();
 const pageRoutes = require('./api/routes/routes');
 const bookingRoutes = require('./api/routes/bookings');
 const adminRoutes = require('./api/routes/admin');
+const sitePolicyRoutes = require('./api/routes/site_policy');
 const port = process.env.PORT || 5000;
 
 const dbURI = 'mongodb+srv://dbUser:48161029@cluster0.1lt83.mongodb.net/quocosolar?retryWrites=true&w=majority';
@@ -24,6 +25,7 @@ app.use(express.static('public'));
 app.use('/', pageRoutes);
 app.use('/book', bookingRoutes);
 app.use('/admin', adminRoutes);
+app.use('/site-policy', sitePolicyRoutes);
 
 // Get Users
 app.get('/database/users', (req, res) => {
