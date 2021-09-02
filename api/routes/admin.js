@@ -58,6 +58,7 @@ app.delete('/db/user/delete/:id', function (req, res) {
         if (err) { console.log(err); }
         else { console.log('Removed User: ' + user); }
     });
+    res.redirect('/admin');
 });
 
 app.get('/db/booking/delete/:id', function (req, res) {
@@ -67,6 +68,7 @@ app.get('/db/booking/delete/:id', function (req, res) {
             console.log('Removed Booking: ' + booking);
         }
     });
+    res.redirect('/admin');
 });
 
 // Undefined routes

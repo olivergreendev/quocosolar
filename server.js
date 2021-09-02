@@ -6,6 +6,7 @@ const bookingRoutes = require('./api/routes/bookings');
 const adminRoutes = require('./api/routes/admin');
 const sitePolicyRoutes = require('./api/routes/site_policy');
 const port = process.env.PORT || 5000;
+const nodemailer = require('nodemailer');
 
 const dbURI = 'mongodb+srv://dbUser:48161029@cluster0.1lt83.mongodb.net/quocosolar?retryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })

@@ -26,6 +26,10 @@ const bookingSchema = new Schema({
         type: Date,
         required: true
     },
+    date_end: {
+        type: Date,
+        required: true,
+    },
     start_time: {
         type: String,
         required: true

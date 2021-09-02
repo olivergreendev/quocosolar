@@ -1340,6 +1340,48 @@ a:hover .bump-link-symbol {
   font-size: 16px !important;
 }
 
+.custom-select {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: dodgerblue;
+}
+
+.select-items div, .select-selected {
+  color: white;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.select-items {
+  position: absolute;
+  background-color: dodgerblue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgab(0, 0, 0, 0.1);
+}
+
 .search-bar-label {
   margin-bottom: 5px;
   font-size: 0.8rem;
@@ -1590,7 +1632,7 @@ a:hover .bump-link-symbol {
 
 .dropdownBtn {
   background-color: #ebebeb;
-  color: #535353;
+  color: black;
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -1621,6 +1663,26 @@ a:hover .bump-link-symbol {
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+}
+
+.booking-details {
+  list-style-type: none;
+  padding: 0;
+}
+
+.booking-details li {
+  font-weight: 400;
+  margin: 10px 0;
+  color: #627597;
+}
+
+.booking-details li span {
+  font-weight: 600 !important;
+}
+
+.booking-success-container hr.solid {
+  border: 1px solid #e2e2e2;
+  max-width: 500px;
 }
 
 :root {

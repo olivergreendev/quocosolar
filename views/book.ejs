@@ -63,36 +63,31 @@
 
                                 <% const last_name = errors.errors.find( ({ param }) => param === 'last_name' ); %>
                                 <% var last_name_error %>
-                                <% typeof last_name === 'undefined' ? console.log('Last name is OK') : last_name_error = last_name.msg %>
+                                <% typeof last_name === 'undefined' ? last_name_error = '' : last_name_error = last_name.msg %>
 
                                 <% const email = errors.errors.find( ({ param }) => param === 'email' ); %>
                                 <% var email_error %>
-                                <% typeof email === 'undefined' ? console.log('Email is OK') : email_error = email.msg %>
+                                <% typeof email === 'undefined' ? email_error = '' : email_error = email.msg %>
 
                                 <% const telephone = errors.errors.find( ({ param }) => param === 'telephone' ); %>
                                 <% var telephone_error %>
-                                <% typeof telephone === 'undefined' ? console.log('Telephone is OK') : telephone_error = telephone.msg %>
+                                <% typeof telephone === 'undefined' ? telephone_error = '' : telephone_error = telephone.msg %>
 
                                 <% const date = errors.errors.find( ({ param }) => param === 'date' ); %>
                                 <% var date_error %>
-                                <% typeof date === 'undefined' ? console.log('Date is OK') : date_error = date.msg %>
+                                <% typeof date === 'undefined' ? date_error = '' : date_error = date.msg %>
 
                                 <% const time = errors.errors.find( ({ param }) => param === 'time' ); %>
                                 <% var time_error %>
-                                <% typeof time === 'undefined' ? console.log('Time is OK') : time_error = time.msg %>
+                                <% typeof time === 'undefined' ? time_error = '' : time_error = time.msg %>
 
                                 <% const q1 = errors.errors.find( ({ param }) => param === 'q1' ); %>
                                 <% var q1_error %>
-                                <% typeof q1 === 'undefined' ? console.log('Question 1 is OK') : q1_error = q1.msg %>
+                                <% typeof q1 === 'undefined' ? q1_error = '' : q1_error = q1.msg %>
 
                                 <% const q2 = errors.errors.find( ({ param }) => param === 'q2' ); %>
                                 <% var q2_error %>
-                                <% typeof q2 === 'undefined' ? console.log('Question 2 is OK') : q2_error = q2.msg %>
-                                
-
-                                <% for (var i=0; i<errors.errors.length; i++) { %>
-                                    <% var msg = errors.errors[i].msg %>
-                                <% } %>
+                                <% typeof q2 === 'undefined' ? q2_error = '' : q2_error = q2.msg %>
                             <% } %>
                         <% } %>
 
@@ -101,7 +96,7 @@
                             <ul>
                                 <li>
                                     <label>Full Name<span class="required">*</span></label>
-                                    <input type="text" name="first_name" class="field-divided" placeholder="First name"/>
+                                    <input type="text" name="first_name" class="field-divided" placeholder="First name" />
                                     <input type="text" name="last_name" class="field-divided" placeholder="Last name"/>
                                     <label for="first_name" class="field-divided inline error-prompt">
                                         <%= first_name_error %>
@@ -129,6 +124,24 @@
                                     <label>Date & Time<span class="required">*</span></label>
                                     <input type="date" id="" class="field-divided" name="date" value="" min="" max=""/>
                                     <input type="time" id="" class="field-divided" name="time" min="" max=""/>
+                                    <!-- <select name="time" class="field-divided">
+                                        <option selected="selected">Select time:</option>
+                                        <option value="1">10:00</option>
+                                        <option value="2">10:30</option>
+                                        <option value="3">11:00</option>
+                                        <option value="4">11:30</option>
+                                        <option value="5">12:00</option>
+                                        <option value="6">12:30</option>
+                                        <option value="7">13:00</option>
+                                        <option value="8">13:30</option>
+                                        <option value="9">14:00</option>
+                                        <option value="6">14:30</option>
+                                        <option value="7">15:00</option>
+                                        <option value="8">15:30</option>
+                                        <option value="9">16:00</option>
+                                        <option value="6">16:30</option>
+                                        <option value="7">17:00</option>
+                                    </select> -->
                                     <label for="date" class="field-divided inline error-prompt">
                                         <%= date_error %>
                                     </label>
@@ -365,6 +378,7 @@
         <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
         <!-- <script src="js/form.js"></script> -->
         <script src="js/sidenav.js"></script>
+        <script src="js/custom-select.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     </body>

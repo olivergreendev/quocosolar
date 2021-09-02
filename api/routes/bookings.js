@@ -8,6 +8,7 @@ const { ObjectID } = require('mongodb');
 const app = express();
 const { check, validationResult } = require('express-validator');
 const expressSession = require('express-session');
+// const nodemailer = require('nodemailer');
 
 app.set('view engine', 'ejs');
 
@@ -47,76 +48,82 @@ app.post('/submit-booking', [
 ], (req, res, next) => {
     
     var data = req.body;
-
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        const alert = errors.array();
-
         req.session.errors = errors;
         req.session.success = false;
+        // const alert = errors.array();
         // return res.status(422).jsonp(errors.array());
+        res.redirect('/book');
     } else {
         req.session.success = true;
+
+        // Save user and booking information
+        var date_start = new Date(data.date+' '+data.time);
+        var date_end = new Date(date_start.getTime() + (1800000));
+
+        const user = new User({
+            first_name: data.first_name,
+            last_name: data.last_name,
+            email: data.email,
+            telephone: data.telephone
+        });
+    
+        user.save()
+        .then((result) => {
+            const booking = new Booking({
+                user_id: user.id,
+                first_name: data.first_name,
+                last_name: data.last_name,
+                email: data.email,
+                telephone: data.telephone,
+                date: date_start,
+                date_end: date_end,
+                start_time: date_start.toLocaleTimeString(),
+                end_time: date_end.toLocaleTimeString(),
+                status: 'Pending'
+            });
+            booking.save()
+            .then((result) => {
+                // res.send('Booking successful.');
+                res.render('success', {details: data});
+            })
+            .catch((err) => {
+                console.log(err);
+                // User.findByIdAndRemove({ _id: user.id }, function (err, booking) {
+                //     if (err) console.log('Error removing user.\n' + err);
+                //     else {
+                //         console.log('Removed Booking: ' + booking);
+                //     }
+                // });
+                // res.redirect('/book');
+            })
+        })
+        .catch((err) => {
+            console.log('Error saving user. Error code: ' + err.code + '\n' + err);
+    
+            if (err.code === 11000) {
+                console.log('Display the error prompt for a duplicate email.');
+                // Show the error prompt label
+            }
+        });
     }
 
-    res.redirect('/book');
-
-    // else {
-    //     var new_date = new Date(data.date+' '+data.time);
-
-    //     const user = new User({
-    //         first_name: data.first_name,
-    //         last_name: data.last_name,
-    //         email: data.email,
-    //         telephone: data.telephone
-    //     });
-    
-    //     user.save()
-    //     .then((result) => {
-    //         const booking = new Booking({
-    //             user_id: user.id,
-    //             first_name: data.first_name,
-    //             last_name: data.last_name,
-    //             email: data.email,
-    //             telephone: data.telephone,
-    //             date: new_date,
-    //             start_time: data.time,
-    //             end_time: data.time, // (+30 mins)
-    //             status: 'Pending'
-    //         });
-    //         booking.save()
-    //         .then((result) => {
-    //             res.redirect('/book');
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //             User.findByIdAndRemove({ _id: user.id }, function (err, booking) {
-    //                 if (err) console.log('Error removing user.\n' + err);
-    //                 else {
-    //                     console.log('Removed Booking: ' + booking);
-    //                 }
-    //             });
-    //             res.redirect('/book');
-    //         })
-    //     })
-    //     .catch((err) => {
-    //         console.log('Error saving user. Error code: ' + err.code + '\n' + err);
-    
-    //         if (err.code === 11000) {
-    //             console.log('Display the error prompt for a duplicate email.');
-    //             // Show the error prompt label
-    //         }
-    //     });
-    // }
+    // res.redirect('/book');
 });
 
-app.get('/submit-booking', (req, res, next) => {
-    // res.status(200).json({
-    //     message: 'Thank you for your booking. Please check your email to verify your booking and secure your slot.'
-    // });
-    res.send('Thanks for your booking.');
-    res.end();
+// app.get('/submit-booking', (req, res, next) => {
+//     // res.status(200).json({
+//     //     message: 'Thank you for your booking. Please check your email to verify your booking and secure your slot.'
+//     // });
+//     res.send('Thanks for your booking.');
+//     res.end();
+// });
+
+app.get('/success', (req, res, next) => {
+    var data = {name: 'Oliver Green', email: 'oliver@email.com', telephone: '07377933388', date: new Date()};
+    res.render('success', {details: data});
 });
 
 app.get('*', (req, res, next) => {
