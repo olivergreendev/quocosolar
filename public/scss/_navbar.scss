@@ -36,7 +36,7 @@ nav .fas {
 .nav-links {
     flex: 1;
     text-align: right;
-    cursor: pointer;
+    // cursor: pointer;
     touch-action: none;
 
     ul {
@@ -49,6 +49,7 @@ nav .fas {
     display: inline-block;
     padding: 8px 12px;
     position: relative;
+    cursor: pointer;
 
     a {
         color: #fff;

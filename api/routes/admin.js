@@ -42,9 +42,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/link2', function (req, res) {
-    res.status(200).json({
-        message: "Link2"
-    });
+    res.status(200).send("Link  2 is working!");
 });
 
 app.get('/link3', function (req, res) {
