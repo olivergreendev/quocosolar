@@ -192,6 +192,19 @@ p {
   display: block;
 }
 
+button {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.gradient-blue {
+  background: -webkit-gradient(linear, left top, right top, from(#0094CC), to(#00C6D5));
+  background: linear-gradient(to right, #0094CC, #00C6D5);
+}
+
 .gray-text-dark {
   color: #627597;
 }
@@ -1146,6 +1159,18 @@ a:hover .bump-link-symbol {
   background-repeat: no-repeat;
   position: relative;
   height: 80vh;
+}
+
+.rounded-btn {
+  border-radius: 8px;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.text-white {
+  color: white;
 }
 
 .information-cards {

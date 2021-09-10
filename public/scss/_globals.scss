@@ -174,3 +174,15 @@ p {
 .block {
     display: block;
 }
+
+button {
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.gradient-blue {
+    background: linear-gradient(to right, #0094CC, #00C6D5);
+}
