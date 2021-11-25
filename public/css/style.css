@@ -615,6 +615,9 @@ nav .fas {
     padding: 0;
     margin: 0;
   }
+  .nav-links ul li:not(:last-child):hover::after {
+    width: 5%;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -1304,8 +1307,8 @@ a:hover .bump-link-symbol {
 .booking-form input[type=email]:focus,
 .booking-form input[type=phone]:focus,
 .booking-form select:focus {
-  -webkit-box-shadow: 0px 2px;
-  box-shadow: 0px 2px;
+  -webkit-box-shadow: 0px 0px 0px 2px;
+  box-shadow: 0px 0px 0px 2px;
 }
 
 .booking-form .field-divided {

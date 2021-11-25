@@ -27,6 +27,7 @@ app.get('/', (req, res, next) => {
     req.session.success = null;
 });
 
+/*
 app.post('/submit-booking', [
     check('first_name').exists().notEmpty().withMessage('First name is required'),
     check('last_name').exists().notEmpty().withMessage('Last name is required'),
@@ -112,6 +113,7 @@ app.post('/submit-booking', [
 
     // res.redirect('/book');
 });
+*/
 
 // app.get('/submit-booking', (req, res, next) => {
 //     // res.status(200).json({
@@ -122,13 +124,13 @@ app.post('/submit-booking', [
 // });
 
 app.get('/success', (req, res, next) => {
-    var data = {name: 'Oliver Green', email: 'oliver@email.com', telephone: '07377933388', date: new Date()};
+    var data = {name: 'Jane Doe', email: 'janedoe@gmail.com', telephone: '07700 900552', date: new Date()};
     res.render('success', {details: data});
 });
 
-app.get('*', (req, res, next) => {
-    res.redirect('/book');
-    res.end();
-});
+// app.get('*', (req, res, next) => {
+//     res.redirect('/book');
+//     res.end();
+// });
 
 module.exports = app;
