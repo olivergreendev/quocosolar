@@ -19,9 +19,9 @@ router.get('/consultation', function (req, res) {
     res.sendFile(dir + '/consultation.html');
 });
 
-router.get('/events', function (req, res) {
-    res.sendFile(dir + '/events.html');
-});
+// router.get('/events', function (req, res) {
+//     res.sendFile(dir + '/events.html');
+// });
 
 router.get('/information', function (req, res) {
     res.sendFile(dir + '/information.html');

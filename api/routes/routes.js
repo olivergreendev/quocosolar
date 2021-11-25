@@ -23,9 +23,9 @@ app.get('/consultation', function (req, res) {
     res.render('consultation');
 });
 
-app.get('/events', function (req, res) {
-    res.render('events');
-});
+// app.get('/events', function (req, res) {
+//     res.render('events');
+// });
 
 app.get('/information', function (req, res) {
     res.render('information');

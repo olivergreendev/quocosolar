@@ -95,9 +95,9 @@ app.get('/consultation', function (req, res) {
     res.sendFile(dir + '/consultation.html');
 });
 
-app.get('/events', function (req, res) {
-    res.sendFile(dir + '/events.html');
-});
+// app.get('/events', function (req, res) {
+//     res.sendFile(dir + '/events.html');
+// });
 
 app.get('/information', function (req, res) {
     res.sendFile(dir + '/information.html');
