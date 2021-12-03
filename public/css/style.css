@@ -226,30 +226,35 @@ button {
   background: -webkit-gradient(linear, left top, right top, from(#0094CC), to(#00C6D5));
   background: linear-gradient(to right, #0094CC, #00C6D5);
   background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .text-gradient-pink-blue {
   -webkit-text-fill-color: transparent;
   background: linear-gradient(70deg, #cb4ca7, #3382f6);
   background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .text-gradient-orange-yellow {
   -webkit-text-fill-color: transparent;
   background: linear-gradient(70deg, #d76964, #ffd57d);
   background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .text-gradient-green-blue {
   -webkit-text-fill-color: transparent;
   background: linear-gradient(70deg, #9DF4D2, #6FBAF6);
   background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .text-gradient-amber-light-purple {
   -webkit-text-fill-color: transparent;
   background: linear-gradient(70deg, #f4c768, #a252ec);
   background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .large-heading-gray {

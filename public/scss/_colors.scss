@@ -1,13 +1,10 @@
 // main titles, text, social icons
 $primary_dark: #393939;
 $primary_light: #F7F7F7;
-
 // labels
 $label_blue: #2575Fc;
-
 // background
 $dark_bg: #001F3A;
-
 // QUOCO SOLAR
 $primary_blue_dark: #0094CC;
 $primary_blue_light: #00C6D5;
@@ -31,61 +28,54 @@ $light-purple-gradient-text: #a252ec;
 $text-gradient-amber-light-purple: linear-gradient(70deg, $amber-gradient-text, $light-purple-gradient-text);
 $information-card-blue: #4452f6;
 $wf-blue: #4353ff;
-
 .gray-text-dark {
     color: $gray-text-dark;
 }
-
 .gray-text-light {
     color: $gray-text-light;
 }
-
 .blue-text-dark {
     color: $blue-text-dark;
 }
-
 .footer-link-gray {
     color: $footer-link;
 }
-
 .text-gradient-blue {
     -webkit-text-fill-color: transparent;
     background: $gradient_background;
     background-clip: text;
+    -webkit-background-clip: text;
 }
-
 .text-gradient-pink-blue {
     -webkit-text-fill-color: transparent;
     background: $text-gradient-pink-blue;
     background-clip: text;
+    -webkit-background-clip: text;
 }
-
 .text-gradient-orange-yellow {
     -webkit-text-fill-color: transparent;
     background: $text-gradient-orange-yellow;
     background-clip: text;
+    -webkit-background-clip: text;
 }
-
 .text-gradient-green-blue {
     -webkit-text-fill-color: transparent;
     background: $text-gradient-green-blue;
     background-clip: text;
+    -webkit-background-clip: text;
 }
-
 .text-gradient-amber-light-purple {
     -webkit-text-fill-color: transparent;
     background: $text-gradient-amber-light-purple;
     background-clip: text;
+    -webkit-background-clip: text;
 }
-
 .large-heading-gray {
     color: $large-heading-gray;
 }
-
 .information-card-blue {
     color: $information-card-blue;
 }
-
 .wf-blue {
     color: $wf-blue;
 }
